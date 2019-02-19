@@ -1,16 +1,21 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()): ?>
+<div class="row mt-5">
+    <div class="col">
 
-    <?php while (have_posts()): the_post(); ?>
+      <?php if (have_posts()): ?>
+          
+          <?php while (have_posts()): the_post(); ?>
+    
+              <h1><?php the_title(); ?></h1>
 
-        <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <?php the_content(); ?>
 
-        <?php the_content(); ?>
+          <?php endwhile; ?>
 
-    <?php endwhile; ?>
+      <?php endif; ?>
+    
+    </div><!-- /col -->
+</div><!-- /row -->
 
-<?php endif; ?>
-<div class=".row"> </div>
-<div class=".col"> </div>
 <?php get_footer(); ?>
